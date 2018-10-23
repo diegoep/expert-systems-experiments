@@ -22,4 +22,4 @@ def import_ontologies_into_catalog():
         if response.status_code in (200,201):
             print("Ontologia",filename,"importada com sucesso no catálogo de ontologias!")
 
-import_ontologies_into_catalog()
+# import_ontologies_into_catalog()

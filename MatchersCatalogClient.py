@@ -1,11 +1,12 @@
 # This script is reponsible for importing ontologies (and generating profile) of the conference domain into the matchers catalog
 import itertools
+import json
 from os import path
 from os import walk
 import requests
 import csv
 
-## 1)
+## 1) (só se quiser usar as ontologias inteiras)
 def import_ontologies():
     matchersCatalogURL = "http://localhost:8888/api/ontologies"
     basepath = "/Users/diegopessoa/Projects/phd/ontologies/conference/"
@@ -20,13 +21,13 @@ def import_ontologies():
                 'description': filename,
                 'domain': 'Conference',
                 'file': basepath + ontologia,
-                'segment': 'false'}
+                'segment': 'false',
+                'experiment' : 'exp1'}
         response = requests.post(matchersCatalogURL, json=json)
         if response.status_code in (200, 201):
             print("Ontologia", filename, "importada com sucesso!")
 
-
-## 3) Pre-requisito: SOMA rodar no catálogo com as ontologias e exportar csvs
+## 1)
 def import_ontologies_segments_into_catalog():
     ## TODO ler segmentos de ontologias gerados pelo SOMA para importar no catálogo
     ## Os arquivos estao salvos na pasta local...
@@ -34,7 +35,8 @@ def import_ontologies_segments_into_catalog():
 
     matchersCatalogURL = "http://localhost:8888/api/ontologies"
 
-    segmentsPath = "/tmp"
+    # segmentsPath = "/tmp"
+    segmentsPath = "/Users/diegopessoa/Projects/phd/soma/experiments/"
     for (dirpath, dirnames, filenames) in walk(segmentsPath):
         files = list(filter(lambda x: x.startswith('source') or x.startswith('target'), filenames))
         break
@@ -71,7 +73,8 @@ def import_ontologies_segments_into_catalog():
                     'description': filename,
                     'domain': 'Conference',
                     'file': segmentsPath + "/" + expfolder + "/" + source_file,
-                    'segment': 'true'}
+                    'segment': 'true',
+                    'experiment': expfolder}
             response = requests.post(matchersCatalogURL, json=json)
             if response.status_code in (200, 201):
                 print("Segmento (source)", filename, "importado com sucesso!")
@@ -83,13 +86,13 @@ def import_ontologies_segments_into_catalog():
                     'description': filename,
                     'domain': 'Conference',
                     'file': segmentsPath + "/" + expfolder + "/" + target_file,
-                    'segment': 'true'}
+                    'segment': 'true',
+                    'experiment': expfolder}
             response = requests.post(matchersCatalogURL, json=json)
             if response.status_code in (200, 201):
                 print("Segmento (target)", filename, "importado com sucesso!")
             else:
                 print("Falha ao importar segmento (target)", filename)
-
 
 def add_coma_matchers():
 
@@ -131,7 +134,7 @@ def add_aml_matchers():
                 'configurationParameters': {
                     "mode": "manual",
                     "bkPath": "aml/knowledge/",
-                    "config": "config-WC-" + str(counter) + ".ini"
+                    "config": "combinations/config-WC-" + str(counter) + ".ini"
                 }}
         config_file_wc.close()
         response = requests.post(matchersCatalogURL, json=data)
@@ -153,7 +156,7 @@ def add_aml_matchers():
                 'configurationParameters': {
                     "mode": "manual",
                     "bkPath": "aml/knowledge/",
-                    "config": "config-SC-" + str(counter) + ".ini"
+                    "config": "combinations/config-SC-" + str(counter) + ".ini"
                 }}
             response = requests.post(matchersCatalogURL, json=data)
             if response.status_code in (200, 201):
@@ -163,6 +166,38 @@ def add_aml_matchers():
                 print(response.text)
             counter += 1
         config_file_sc.close()
+
+def evaluate_alignments_and_generating_profile():
+    gold_standard_path = "/Users/diegopessoa/Projects/phd/soma/gold-standard"
+
+    ## pegar todos os alinhamentos e saber qual o experimento e as ontologias de cada um para usar a validacao...
+
+    ## Pegar todos os alinhamentos agora:
+    matchersCatalogURL = "http://localhost:8888/api/alignment"
+
+    response = requests.get(matchersCatalogURL)
+    if response.status_code == 200:
+        alignments = json.loads(response.text)
+        for alignment in alignments:
+            ### Generating matching task profile
+            response = requests.put(matchersCatalogURL + "/profile/{}".format(alignment['id']))
+            if response.status_code == 200:
+                sourceOntologyPrefix = alignment['ontology1']['description'].split("-")[2]
+                targetOntologyPrefix = alignment['ontology2']['description'].split("-")[3]
+                gold_standard = gold_standard_path + "/" + alignment['ontology1']['experiment'] + "/" + sourceOntologyPrefix + "-" + targetOntologyPrefix + ".rdf"
+                if path.exists(gold_standard):
+                    print("Evaluating alignment with id ", alignment['id'])
+                    response = requests.post(matchersCatalogURL + "/evaluations?alignmentId={}&referenceAlignment={}".format(alignment['id'], "file://"+gold_standard))
+                    if response.status_code == 200:
+                        print("Alinhamento com id ", alignment['id'], "avaliado com sucesso")
+                    else:
+                        print("Falha ao avaliar alinhamento com id ",alignment['id'])
+                        print(response.text)
+            else:
+                print(response.text)
+                print("falha ao gerar profile para alinhamento")
+    else:
+        print("Falha ao ler alinhamentos")
 
 def get_aml_combinations():
     combinations = []
@@ -191,9 +226,3 @@ def get_coma_combinations():
         for row in reader:
             tuples.append(row)
     return tuples
-
-add_aml_matchers()
-
-# import_ontologies()
-
-# import_ontologies_segments_into_catalog()
