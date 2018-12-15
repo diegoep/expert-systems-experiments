@@ -168,7 +168,7 @@ def add_aml_matchers():
         config_file_sc.close()
 
 def evaluate_alignments_and_generating_profile():
-    gold_standard_path = "/Users/diegopessoa/Projects/phd/soma/gold-standard"
+    gold_standard_path = "/Users/diegopessoa/Projects/doutorado/SOMA/gold-standard"
 
     ## pegar todos os alinhamentos e saber qual o experimento e as ontologias de cada um para usar a validacao...
 

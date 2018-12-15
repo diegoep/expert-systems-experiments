@@ -1,4 +1,4 @@
-## This script generates segments for each pair of ontologies in the catalog based on three data requirements
+3## This script generates segments for each pair of ontologies in the catalog based on three data requirements
 from os import path
 from os import walk
 import requests

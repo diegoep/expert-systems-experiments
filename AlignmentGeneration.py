@@ -31,7 +31,6 @@ def executeAlignments():
             else:
                 alignmentDict[source+'-'+target]['target'] = ontologyToAlign['file']
 
-        ## Varrer cada elemento do dicionario e executar os indices source vs target em cada matcher
         for dic in alignmentDict:
             sourceOntology = alignmentDict[dic]['source']
             targetOntology = alignmentDict[dic]['target']
