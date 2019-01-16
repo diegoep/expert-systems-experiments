@@ -10,23 +10,24 @@ class Experiments:
         pass
 
     def preparation(self):
+        #pass
         ## Import Whole ontologies:
-        import_ontologies()
+        #import_ontologies()
 
         ## Import ontologies in ontology catalog for generating segments
-        import_ontologies_into_catalog()
+        #import_ontologies_into_catalog()
 
         ## Import segments
-        import_ontologies_segments_into_catalog()
+        #import_ontologies_segments_into_catalog()
 
         ## Calculate matching task profiling (combination of source and target ontology profiles)
 
 
         ## Add COMA Matchers combination
-        add_coma_matchers()
+        # add_coma_matchers()
 
         ## Add AML matchers combination
-        add_aml_matchers()
+        # add_aml_matchers()
 
         ## Run alingments for each matcher generated
         executeAlignments()
@@ -38,6 +39,7 @@ class Experiments:
         evaluate_alignments_and_generating_profile()
 
 exp = Experiments()
+exp.preparation()
 exp.execution()
 
 

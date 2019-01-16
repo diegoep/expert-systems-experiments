@@ -36,12 +36,12 @@ def import_ontologies_segments_into_catalog():
     matchersCatalogURL = "http://localhost:8888/api/ontologies"
 
     # segmentsPath = "/tmp"
-    segmentsPath = "/Users/diegopessoa/Projects/phd/soma/experiments/"
+    segmentsPath = "/Users/diegopessoa/Projects/phd/soma/segments/"
     for (dirpath, dirnames, filenames) in walk(segmentsPath):
         files = list(filter(lambda x: x.startswith('source') or x.startswith('target'), filenames))
         break
 
-    expfolders = ['exp2', 'exp3', 'exp4']
+    expfolders =  ['exp3']
     ## TODO varrer cada ontologia de segmento gerado para o experimento e importar no catálogo como ontologia normal para gerar profile.
     for expfolder in expfolders:
         print("************ " + expfolder + " ************")
@@ -118,7 +118,7 @@ def add_coma_matchers():
 def add_aml_matchers():
     ## Add AML matcher combinations
     word_combinations, struct_combinations = get_aml_combinations()
-    root_path = "/Users/diegopessoa/Projects/phd/matcherscatalog/wrapper-aml/lib/combinations"
+    root_path = "/Users/diegopessoa/Projects/phd/matchers-catalog/wrapper-aml/lib/combinations"
     matchersCatalogURL = "http://localhost:8888/api/matcher"
 
     counter = 1
@@ -168,7 +168,7 @@ def add_aml_matchers():
         config_file_sc.close()
 
 def evaluate_alignments_and_generating_profile():
-    gold_standard_path = "/Users/diegopessoa/Projects/doutorado/SOMA/gold-standard"
+    gold_standard_path = "/Users/diegopessoa/Projects/phd/SOMA/gold-standard"
 
     ## pegar todos os alinhamentos e saber qual o experimento e as ontologias de cada um para usar a validacao...
 

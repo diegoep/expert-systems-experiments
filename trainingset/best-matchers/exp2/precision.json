@@ -1,0 +1,142 @@
+[
+  {
+    "ontology1": "source-segment-cmt-confOf",
+    "ontology2": "target-segment-cmt-confOf",
+    "metric": "precision",
+    "value": 0.42857142857142855,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-conference-sigkdd",
+    "ontology2": "target-segment-conference-sigkdd",
+    "metric": "precision",
+    "value": 0.75,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-conference-edas",
+    "ontology2": "target-segment-conference-edas",
+    "metric": "precision",
+    "value": 0.8,
+    "matcher": "COMA-RES2_SELFNODE-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-conference-iasted",
+    "ontology2": "target-segment-conference-iasted",
+    "metric": "precision",
+    "value": 1,
+    "matcher": "COMA-RES2_SIBLINGS-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-confOf-ekaw",
+    "ontology2": "target-segment-confOf-ekaw",
+    "metric": "precision",
+    "value": 0.3333333333333333,
+    "matcher": "COMA-RES2_SIBLINGS-SIM_STR_LEVENSHTEIN_LUCENE"
+  },
+  {
+    "ontology1": "source-segment-cmt-ekaw",
+    "ontology2": "target-segment-cmt-ekaw",
+    "metric": "precision",
+    "value": 0.7142857142857143,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-edas-iasted",
+    "ontology2": "target-segment-edas-iasted",
+    "metric": "precision",
+    "value": 0.6666666666666666,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-conference-confOf",
+    "ontology2": "target-segment-conference-confOf",
+    "metric": "precision",
+    "value": 0.75,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-cmt-conference",
+    "ontology2": "target-segment-cmt-conference",
+    "metric": "precision",
+    "value": 0.6666666666666666,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-iasted-sigkdd",
+    "ontology2": "target-segment-iasted-sigkdd",
+    "metric": "precision",
+    "value": 0.3333333333333333,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-cmt-edas",
+    "ontology2": "target-segment-cmt-edas",
+    "metric": "precision",
+    "value": 0.875,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-edas-sigkdd",
+    "ontology2": "target-segment-edas-sigkdd",
+    "metric": "precision",
+    "value": 0.8571428571428571,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_JACCARD"
+  },
+  {
+    "ontology1": "source-segment-edas-ekaw",
+    "ontology2": "target-segment-edas-ekaw",
+    "metric": "precision",
+    "value": 0.6666666666666666,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-confOf-edas",
+    "ontology2": "target-segment-confOf-edas",
+    "metric": "precision",
+    "value": 0.6666666666666666,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-conference-ekaw",
+    "ontology2": "target-segment-conference-ekaw",
+    "metric": "precision",
+    "value": 0.5,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-cmt-iasted",
+    "ontology2": "target-segment-cmt-iasted",
+    "metric": "precision",
+    "value": 0.6666666666666666,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-confOf-sigkdd",
+    "ontology2": "target-segment-confOf-sigkdd",
+    "metric": "precision",
+    "value": 1,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-ekaw-iasted",
+    "ontology2": "target-segment-ekaw-iasted",
+    "metric": "precision",
+    "value": 0.75,
+    "matcher": "COMA-RES2_SELFPATH-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-cmt-sigkdd",
+    "ontology2": "target-segment-cmt-sigkdd",
+    "metric": "precision",
+    "value": 0.8571428571428571,
+    "matcher": "COMA-RES2_SELFNODE-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  },
+  {
+    "ontology1": "source-segment-ekaw-sigkdd",
+    "ontology2": "target-segment-ekaw-sigkdd",
+    "metric": "precision",
+    "value": 0.8333333333333334,
+    "matcher": "COMA-RES2_SELFNODE-SIM_STR_COSINE_PPJOINPLUSFULLYCACHED"
+  }
+]
