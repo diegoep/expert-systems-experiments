@@ -179,11 +179,17 @@ def evaluate_alignments_and_generating_profile():
     if response.status_code == 200:
         alignments = json.loads(response.text)
         for alignment in alignments:
+            # if alignment['ontology1']['experiment'] != 'exp1':
+            #     continue
             ### Generating matching task profile
             response = requests.put(matchersCatalogURL + "/profile/{}".format(alignment['id']))
             if response.status_code == 200:
-                sourceOntologyPrefix = alignment['ontology1']['description'].split("-")[2]
-                targetOntologyPrefix = alignment['ontology2']['description'].split("-")[3]
+                if alignment['ontology1']['experiment'] == 'exp1' :
+                    sourceOntologyPrefix = alignment['ontology1']['description']
+                    targetOntologyPrefix = alignment['ontology2']['description']
+                else:
+                    sourceOntologyPrefix = alignment['ontology1']['description'].split("-")[2]
+                    targetOntologyPrefix = alignment['ontology2']['description'].split("-")[3]
                 gold_standard = gold_standard_path + "/" + alignment['ontology1']['experiment'] + "/" + sourceOntologyPrefix + "-" + targetOntologyPrefix + ".rdf"
                 if path.exists(gold_standard):
                     print("Evaluating alignment with id ", alignment['id'])

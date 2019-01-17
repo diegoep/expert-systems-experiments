@@ -1,0 +1,16 @@
+ontology1,ontology2,metric,value,matcher
+cmt,sigkdd,recall,0.9166666666666666,RECOMENDADO
+edas,ekaw,recall,0.6086956521739131,RECOMENDADO
+ekaw,iasted,recall,0.7,RECOMENDADO
+confOf,sigkdd,recall,0.8571428571428571,RECOMENDADO
+ekaw,sigkdd,recall,0.8181818181818182,RECOMENDADO
+iasted,sigkdd,recall,0.9333333333333333,RECOMENDADO
+cmt,iasted,recall,1,RECOMENDADO
+confOf,iasted,recall,0.5555555555555556,RECOMENDADO
+cmt,edas,recall,0.7692307692307693,RECOMENDADO
+confOf,edas,recall,0.631578947368421,RECOMENDADO
+cmt,confOf,recall,0.4375,RECOMENDADO
+edas,sigkdd,recall,0.8,RECOMENDADO
+edas,iasted,recall,0.42105263157894735,RECOMENDADO
+cmt,ekaw,recall,0.6363636363636364,RECOMENDADO
+confOf,ekaw,recall,0.8,RECOMENDADO

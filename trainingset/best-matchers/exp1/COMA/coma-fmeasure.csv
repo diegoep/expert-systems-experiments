@@ -1,0 +1,16 @@
+ontology1,ontology2,metric,value,matcher
+ekaw,sigkdd,fmeasure,0.27450980392156865,COMA
+confOf,edas,fmeasure,0.3384615384615385,COMA
+cmt,confOf,fmeasure,0.2127659574468085,COMA
+confOf,ekaw,fmeasure,0.3333333333333333,COMA
+cmt,edas,fmeasure,0.3076923076923077,COMA
+cmt,sigkdd,fmeasure,0.5,COMA
+edas,sigkdd,fmeasure,0.18181818181818182,COMA
+edas,ekaw,fmeasure,0.37837837837837845,COMA
+cmt,ekaw,fmeasure,0.19230769230769232,COMA
+confOf,sigkdd,fmeasure,0.2222222222222222,COMA
+ekaw,iasted,fmeasure,0.0,COMA
+edas,iasted,fmeasure,0.0,COMA
+iasted,sigkdd,fmeasure,0.0,COMA
+cmt,iasted,fmeasure,0.0,COMA
+confOf,iasted,fmeasure,0.0,COMA

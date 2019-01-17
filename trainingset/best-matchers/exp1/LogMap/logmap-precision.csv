@@ -1,0 +1,16 @@
+ontology1,ontology2,metric,value,matcher
+edas,ekaw,precision,0.061855670103092786,LogMap
+confOf,iasted,precision,0.023255813953488372,LogMap
+edas,sigkdd,precision,0.02185792349726776,LogMap
+cmt,confOf,precision,0.02564102564102564,LogMap
+cmt,edas,precision,0.04081632653061224,LogMap
+confOf,sigkdd,precision,0.029411764705882353,LogMap
+cmt,sigkdd,precision,0.055,LogMap
+confOf,ekaw,precision,0.07650273224043716,LogMap
+iasted,sigkdd,precision,0.06965174129353234,LogMap
+cmt,iasted,precision,0.02,LogMap
+ekaw,sigkdd,precision,0.03482587064676617,LogMap
+ekaw,iasted,precision,0.03482587064676617,LogMap
+edas,iasted,precision,0.0374331550802139,LogMap
+cmt,ekaw,precision,0.029850746268656716,LogMap
+confOf,edas,precision,0.06547619047619048,LogMap

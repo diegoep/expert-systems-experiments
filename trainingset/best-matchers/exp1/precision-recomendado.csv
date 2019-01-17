@@ -1,0 +1,16 @@
+ontology1,ontology2,metric,value,matcher
+edas,iasted,precision,0.5,RECOMENDADO
+ekaw,sigkdd,precision,1,RECOMENDADO
+ekaw,iasted,precision,0.5833333333333334,RECOMENDADO
+edas,ekaw,precision,0.8333333333333334,RECOMENDADO
+confOf,edas,precision,0.8461538461538461,RECOMENDADO
+cmt,sigkdd,precision,1,RECOMENDADO
+confOf,ekaw,precision,0.8823529411764706,RECOMENDADO
+confOf,iasted,precision,0.45454545454545453,RECOMENDADO
+edas,sigkdd,precision,0.6666666666666666,RECOMENDADO
+cmt,ekaw,precision,1,RECOMENDADO
+iasted,sigkdd,precision,0.7222222222222222,RECOMENDADO
+cmt,iasted,precision,0.8,RECOMENDADO
+confOf,sigkdd,precision,1,RECOMENDADO
+cmt,confOf,precision,0.875,RECOMENDADO
+cmt,edas,precision,1,RECOMENDADO

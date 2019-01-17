@@ -54,8 +54,8 @@ def executeAlignments():
             response = requests.get(matchersEndpoint)
             matchers = json.loads(response.text)
             for matcher in matchers:
-                # if matcher['name'] != 'LogMap':
-                #     continue
+                # if matcher['name'] != 'COMA':
+                #      continue
                 alignmentEndpoint = "http://localhost:8888/api/alignment"
                 logging.info("Alinhando {} e {} usando matcher {}".format(sourceOntology, targetOntology, matcher['name']))
                 data = {'ontology1': sourceOntology, 'ontology2': targetOntology, 'matcher': matcher['name'], 'experiment': exp}
