@@ -39,8 +39,8 @@ class Experiments:
         evaluate_alignments_and_generating_profile()
 
 exp = Experiments()
-exp.preparation()
 exp.execution()
+#exp.execution()
 
 
 

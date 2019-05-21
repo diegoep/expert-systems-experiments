@@ -17,7 +17,7 @@ def executeAlignments():
     ## Executar alinhamento para cada par de ontologia
     ## Fazer combinações...
     # exps = ['exp2', 'exp3', 'exp4']
-    exps = ['exp1']
+    exps = ['exp3']
     # exps = ['exp1']
     logging.info("Executando alinhamentos de ontologias")
     for exp in exps:
@@ -40,6 +40,8 @@ def executeAlignments():
             for idx, ontologyToAlign in enumerate(ontologiesToAlign):
                 source = str(ontologyToAlign['description']).split("-")[2]
                 target = str(ontologyToAlign['description']).split("-")[3].split(".owl")[0]
+                # if source == 'cmt' or source == 'conference' or source == 'confOf':
+                #     continue
                 if not source + '-' + target in alignmentDict:
                     alignmentDict[source + '-' + target] = {}
                 if idx % 2 == 0:
@@ -55,7 +57,7 @@ def executeAlignments():
             matchers = json.loads(response.text)
             for matcher in matchers:
                 # if matcher['name'] != 'COMA':
-                #      continue
+                #     continue
                 alignmentEndpoint = "http://localhost:8888/api/alignment"
                 logging.info("Alinhando {} e {} usando matcher {}".format(sourceOntology, targetOntology, matcher['name']))
                 data = {'ontology1': sourceOntology, 'ontology2': targetOntology, 'matcher': matcher['name'], 'experiment': exp}
@@ -69,3 +71,4 @@ def executeAlignments():
     ##Combinar só pares
     ##Combinar ontologias
 
+executeAlignments()

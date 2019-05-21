@@ -103,7 +103,6 @@ def find_best_matchers(minValue, metric, experiment):
         matchersCatalogUrl + "?minValue={}&metric={}&experiment={}&quantity={}".format(minValue, metric, experiment, 1))
     if response.status_code == 200:
         alignments = json.loads(response.text)
-        print(alignments)
         bestMatchers = []
         for alignment in alignments:
             bestMatcherEntry = {}
@@ -117,4 +116,4 @@ def find_best_matchers(minValue, metric, experiment):
             writer.writerow(['ontology1', 'ontology2', 'matcher'])
             writer.writerows(bestMatchers)
 
-find_best_matchers(0.3, "precision", "exp2")
+find_best_matchers(0.3, "precision", "exp3")
